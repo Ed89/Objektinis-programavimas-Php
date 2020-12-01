@@ -1,0 +1,96 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+      <meta charset="UTF-8">
+      <title>Document</title>
+  </head>
+
+  <body>
+      <?php
+
+//    echo 'labas';
+//    echo '<br>';
+
+
+$array = array(
+    10,
+    array(100,
+        array(1000, 2000, 3000),
+          300),
+    70,
+    150
+    );
+
+
+//
+//echo '<pre>';
+//    print_r($array[1][0]);
+//echo '</pre>';
+
+
+
+//ciklas foreach: masyvas elementu sumos apskaiciaimas
+$sumForeach = 0;
+$sumForeach1 = 0;
+$sumForeach2 = 0;
+
+    
+
+    
+    foreach($array as $value){ //perziuri visus elementus masyve
+     
+       if(is_array($value)){
+//            echo '<pre>';
+//             echo 'value ';
+//            print_r($value);
+//            echo '</pre>';
+        }
+        else{
+    
+    $sumForeach+=$value;
+        
+      }
+       
+        if (is_array($value)){
+        foreach($value as $value1){
+            if(is_array($value1)){
+//            echo '<pre>';
+//                 echo 'value1 ';
+//            print_r($value1);
+//            echo '</pre>';
+        }
+        else{
+            $sumForeach1+=$value1;
+            }
+           
+            if (is_array($value1)){
+             foreach($value1 as $value2){
+            if(is_array($value2)){
+//            echo '<pre>';
+//                 echo 'value1 ';
+//            print_r($value2);
+//            echo '</pre>';
+        }
+        else{
+            $sumForeach2+=$value2;
+            }
+        }
+            
+                     
+        }}}
+        
+            }
+
+
+echo '<br>Suma apskaiciuota 1 sluoksnio Foreach ciklo palba yra : '.$sumForeach;
+echo '<br>Suma apskaiciuota 2 sluoksnio Foreach ciklo palba yra : '.$sumForeach1;
+echo '<br>Suma apskaiciuota 3 sluoksnio Foreach ciklo palba yra : '.$sumForeach2;
+
+echo '<br>Suma apskaiciuota Foreach ciklo palba yra : '.$sumForeach3=$sumForeach+$sumForeach1+$sumForeach2;
+
+    ?>
+
+  </body>
+
+  </html>
