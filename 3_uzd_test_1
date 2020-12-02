@@ -1,0 +1,63 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+      <meta charset="UTF-8">
+      <title>Document</title>
+  </head>
+
+  <body>
+      <?php
+
+//    echo 'labas';
+//    echo '<br>';
+
+
+$array = array(
+    10,
+    array(100,
+        array(1000, 2000, 3000),
+          300),
+    70,
+    150
+    );
+
+
+
+//ciklas foreach: masyvas elementu sumos apskaiciaimas
+$sumForeach = 0;
+$sumForeach1 = 0;
+$sumForeach2 = 0;
+
+    
+    foreach($array as $value){ //perziuri visus elementus masyve
+  is_array($value) ? :
+    
+    $sumForeach+=$value;
+        
+       
+        foreach((array)$value as $value1){
+        is_array($value1) ? :
+            $sumForeach1+=$value1;
+                      
+            
+             foreach((array)$value1 as $value2){
+       
+            $sumForeach2+=$value2;
+    
+        }           
+                     
+        }        
+            }
+
+
+echo '<br>Suma apskaiciuota 1 sluoksnio Foreach ciklo pagalba yra : '.$sumForeach;
+echo '<br>Suma apskaiciuota 2 sluoksnio Foreach ciklo pagalba yra : '.$sumForeach1;
+echo '<br>Suma apskaiciuota 3 sluoksnio Foreach ciklo pagalba yra : '.$sumForeach2;
+
+
+    ?>
+
+  </body>
+
+  </html>
